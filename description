@@ -10,4 +10,4 @@ executions.  Temporal operators are implemented as inductive
 greatest) fixpoints. Several general lemmas,
 that correspond to LTL rules, are proved.
 Keywords: temporal logic, infinite transition systems, co-induction.
-Require: relations
+Require:
