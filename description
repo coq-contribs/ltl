@@ -1,0 +1,13 @@
+Name: LTL
+Title: Linear Temporal Logic
+Author:  Solange COUPET-GRIMAL
+Institution: Laboratoire d'Informatique Fondamentale de Marseille (LIF, UMR 6166).
+Date: July 2002
+Description: This contribution contains a shallow embedding of Linear
+Temporal Logic (LTL) based on a co-inductive representation of program
+executions.  Temporal operators are implemented as inductive
+(respectively co-inductive) types when they are least (respectively
+greatest) fixpoints. Several general lemmas,
+that correspond to LTL rules, are proved.
+Keywords: temporal logic, infinite transition systems, co-induction.
+Require: relations

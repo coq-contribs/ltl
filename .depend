@@ -1,0 +1,21 @@
+termination.vo: termination.v ltl.vo
+termination.vi: termination.v ltl.vo
+safety.vo: safety.v ltl.vo
+safety.vi: safety.v ltl.vo
+ltl.vo: ltl.v
+ltl.vi: ltl.v
+liveness.vo: liveness.v ltl.vo
+liveness.vi: liveness.v ltl.vo
+leads_to.vo: leads_to.v ltl.vo
+leads_to.vi: leads_to.v ltl.vo
+fairness.vo: fairness.v congruence.vo
+fairness.vi: fairness.v congruence.vo
+congruence.vo: congruence.v safety.vo
+congruence.vi: congruence.v safety.vo
+termination.html: termination.v ltl.html
+safety.html: safety.v ltl.html
+ltl.html: ltl.v
+liveness.html: liveness.v ltl.html
+leads_to.html: leads_to.v ltl.html
+fairness.html: fairness.v congruence.html
+congruence.html: congruence.v safety.html

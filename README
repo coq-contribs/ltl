@@ -1,0 +1,24 @@
+ Here is a shallow embedding of linear temporal logic (LTL). 
+Program executions are represented by infinite co-inductive lists 
+and  temporal operators by co-inductive or inductive types, 
+depending on whether they are greatest or least fixpoints.
+
+ltl.v contains a parameterized specification of infinite transitions systems, 
+the definitions of LTL operators and some safety and fairness related notions.
+
+The other files contain lemmas corresponding to LTL rules. 
+
+Contents:
+
+safety.v  : co-inductive lemmas that correspond to safety properties
+liveness.v : inductive lemmas that correspond to liveness properties
+fairness.v : a comparison between two notions of fairness
+congruence.v : the monotonicity of temporal operators
+leads_to.v : some transition properties of ``leads_to_via''
+termination.v : the main termination lemma. It makes it possible to conclude that, 
+provided that a property  A initially holds on a stream, 
+a property B continuously holds  until a property C is eventually satisfied. 
+The proof is based on the existence of a measure on the states ranging over 
+a set equipped with a well-founded relation. It is assumed that eventually, 
+either the measure strictly decreases, or  C becomes true. Meanwhile, B remains true. 
+
