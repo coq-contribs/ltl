@@ -1,6 +1,6 @@
 Name: LTL
 Title: Linear Temporal Logic
-Author:  Solange COUPET-GRIMAL
+Author: Solange Coupet-Grimal
 Institution: Laboratoire d'Informatique Fondamentale de Marseille (LIF, UMR 6166).
 Date: July 2002
 Description: This contribution contains a shallow embedding of Linear
@@ -10,4 +10,4 @@ executions.  Temporal operators are implemented as inductive
 greatest) fixpoints. Several general lemmas,
 that correspond to LTL rules, are proved.
 Keywords: temporal logic, infinite transition systems, co-induction.
-Require: relations
+Require:
