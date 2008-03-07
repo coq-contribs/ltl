@@ -1,3 +1,4 @@
+-R . LTL
 congruence.v 
 fairness.v 
 leads_to.v 
