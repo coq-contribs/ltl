@@ -9,6 +9,6 @@ executions.  Temporal operators are implemented as inductive
 (respectively co-inductive) types when they are least (respectively
 greatest) fixpoints. Several general lemmas,
 that correspond to LTL rules, are proved.
-Keywords: temporal logic, infinite transition systems, co-induction.
+Keywords: temporal logic, infinite transition systems, co-induction
 Require:
 Category: Mathematics/Logic/Modal logic
