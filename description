@@ -2,7 +2,7 @@ Name: LTL
 Title: Linear Temporal Logic
 Author: Solange Coupet-Grimal
 Institution: Laboratoire d'Informatique Fondamentale de Marseille (LIF, UMR 6166).
-Date: July 2002
+Date: 2002-07
 Description: This contribution contains a shallow embedding of Linear
 Temporal Logic (LTL) based on a co-inductive representation of program
 executions.  Temporal operators are implemented as inductive
