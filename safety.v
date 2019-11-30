@@ -42,7 +42,7 @@ Lemma always_assumption :
  (forall str : stream state, always Q str -> P str) ->
  forall str : stream state, always Q str -> always P str.
 
-intros P Q; cofix.
+intros P Q; cofix always_assumption.
 intros H_Q_P str.
 case str; clear str.
 intros s str always_Q.
@@ -79,7 +79,7 @@ Lemma induct :
  P (head_str str) -> always (state2stream_formula P) str.
 
 
-intros P Inv; unfold state2stream_formula in |- *; cofix; intro str; case str;
+intros P Inv; unfold state2stream_formula in |- *; cofix induct; intro str; case str;
  simpl in |- *.
 intros h tl Htrace Hhead; constructor; try assumption.
 apply induct; clear induct.
@@ -117,7 +117,7 @@ unfold safe in |- *; unfold run in |- *; intros F P I H_safe H str str_safe;
  elim str_safe.
 intro h; clear h; cut (always I str); auto.
 clear str_safe; generalize str; clear str H_safe.
-cofix.
+cofix always_on_run.
 intro str; case str; clear str.
 intros s str always_I H_trace always_F.
 inversion always_I.

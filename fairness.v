@@ -48,10 +48,10 @@ apply
              fair_step transition fair (head_str str')
                (head_str (tl_str str')))); auto.
 clear H_fairstr.
-generalize str; clear str; unfold implies in |- *; cofix.
+generalize str; clear str; unfold implies in |- *; cofix aux.
 intros str; case str; clear str.
 constructor; auto.
-clear strong_fairstr_implies_fairstr.
+clear aux.
 intro H.
 apply
  implies_eventually

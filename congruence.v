@@ -46,7 +46,7 @@ Lemma lift_implies_stream :
  (forall str : stream state, P str -> Q str) ->
  forall str : stream state, implies P Q str.
 unfold implies in |- *; intros P Q H. 
-cofix; intro str; case str; clear str.
+cofix lift_implies_stream; intro str; case str; clear str.
 intros s str; constructor; auto.
 Qed.
 
@@ -98,7 +98,7 @@ Lemma implies_always :
 
 
 intros P Q.
-cofix.
+cofix implies_always.
  intro str; case str; clear str.
 intros s str H1 H2.
 constructor.

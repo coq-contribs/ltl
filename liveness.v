@@ -147,7 +147,7 @@ Lemma always_one_step_leads_to :
 
 unfold once_until in |- *; unfold leads_to_via in |- *.
 intros P Q H_enabled leads_P_Q; unfold implies in |- *.
-cofix.
+cofix always_one_step_leads_to.
 intro str; case str; intros s str'; case str'.
 intros t tl H_trace H_fair; constructor.
 intro H.
