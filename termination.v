@@ -18,10 +18,9 @@
 (*                              termination.v                               *)
 (****************************************************************************)
 
-Section termination.
-
 Require Export ltl.
-Require Import Relations.
+
+Section termination.
 
 Variables (Alpha : Set) (state : Set) (r : relation Alpha)
   (meas : state -> Alpha -> Prop).
@@ -95,7 +94,7 @@ simpl in H1; inversion H1; rewrite H2; generalize H0;
 rewrite <- H2; auto.
 Qed.
 
-Hint Resolve wf_leadsto.
+Hint Resolve wf_leadsto : core.
 
 Lemma wf_leadsto_rule :
  forall (A B C : state_formula state) (str : stream state),
@@ -110,7 +109,7 @@ Lemma wf_leadsto_rule :
       (fun s : state => A s /\ (exists t : Alpha, meas s t)))
    (state2stream_formula B) (state2stream_formula C) str.
 
-intros A B C; cofix.
+intros A B C; cofix wf_leadsto_rule.
 intro str; case str; intros s tl H; constructor; eauto.
 unfold leads_to_via in wf_leadsto_rule; unfold implies in wf_leadsto_rule;
  apply wf_leadsto_rule.

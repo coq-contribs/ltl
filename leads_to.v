@@ -19,9 +19,10 @@
 (*                                  leads_to.v                              *)
 (****************************************************************************)
 
+Require Export ltl.
+
 Section leads_to.
 
-Require Export ltl.
 Variable state label : Set.
     
 
@@ -49,7 +50,7 @@ intros s str B_str until_B_C H_always_until H_always; constructor 2; auto.
 apply H_always_until; inversion H_always; assumption.
 Qed.
 
-Hint Resolve trans_until_leads.
+Hint Resolve trans_until_leads : core.
 
 Lemma trans_leads_to :
  forall (A B C D E : stream_formula state) (str : stream state),
@@ -57,7 +58,7 @@ Lemma trans_leads_to :
  leads_to_via C D E str ->
  leads_to_via (fun str : stream state => A str \/ C str)
    (fun str : stream state => B str \/ D str) E str.
-intros A B C D E; cofix.
+intros A B C D E; cofix trans_leads_to.
 intro str; case str; clear str.
 intros s str H1 H2; constructor.
 intro H; elim H; clear H.

@@ -18,9 +18,9 @@
 (*                                 ltl .v                                   *)
 (****************************************************************************)
 
-Section ltl.
-
 Require Export Relations.
+
+Section ltl.
 
 Set Implicit Arguments.
 Unset Strict Implicit.

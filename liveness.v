@@ -18,9 +18,10 @@
 (*                                liveness.v                                *)
 (****************************************************************************)
 
+Require Export ltl.
+
 Section liveness.
 
-Require Export ltl.
 Variables (state label : Set) (transition : label -> relation state)
   (init_state : state -> Prop) (fair : label -> Prop).
 
@@ -133,7 +134,7 @@ simpl in H2; constructor 2; auto.
 constructor 1; apply leads_P_Q with (s := s1); trivial.
 Qed.
 
-Hint Resolve one_step_leads_to.
+Hint Resolve one_step_leads_to : core.
 
 
 Lemma always_one_step_leads_to :
@@ -147,7 +148,7 @@ Lemma always_one_step_leads_to :
 
 unfold once_until in |- *; unfold leads_to_via in |- *.
 intros P Q H_enabled leads_P_Q; unfold implies in |- *.
-cofix.
+cofix always_one_step_leads_to.
 intro str; case str; intros s str'; case str'.
 intros t tl H_trace H_fair; constructor.
 intro H.
